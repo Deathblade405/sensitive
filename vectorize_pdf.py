@@ -9,15 +9,15 @@ def extract_text_from_pdf(pdf_path):
     with fitz.open(pdf_path) as doc:
         for page in doc:
             text += page.get_text()
-    return text.strip()  # Return stripped text to ensure it's non-empty
+    return text.strip() 
 
 def vectorize_text(text):
     """Vectorizes the given text using TfidfVectorizer."""
     if not text:
         raise ValueError("The extracted text is empty. Cannot vectorize an empty document.")
     
-    # Initialize the TfidfVectorizer with no stop words to avoid empty vocabulary errors
-    vectorizer = TfidfVectorizer(stop_words=None)  # Adjust as needed
+ 
+    vectorizer = TfidfVectorizer(stop_words=None) 
     tfidf_matrix = vectorizer.fit_transform([text])
     
     return vectorizer, tfidf_matrix

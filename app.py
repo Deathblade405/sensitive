@@ -58,4 +58,4 @@ if __name__ == "__main__":
     store_sensitive_vector("data/sensitive_content.pdf")
 
     # Check another PDF
-    check_pdf_for_sensitive_content("data/test_content8.pdf", threshold=0.2)
+    check_pdf_for_sensitive_content("data/test_content1.pdf", threshold=0.2)
